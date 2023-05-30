@@ -29,6 +29,8 @@ import android.widget.Toast;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.IdRes;
 
+import com.google.android.material.card.MaterialCardView;
+
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -60,7 +62,7 @@ public class CountryCodePicker extends RelativeLayout {
     LayoutInflater mInflater;
     TextView textView_selectedCountry;
     EditText editText_registeredCarrierNumber;
-    RelativeLayout holder;
+    MaterialCardView holder;
     ImageView imageViewArrow;
     ImageView imageViewFlag;
     LinearLayout linearFlagBorder;
@@ -214,11 +216,11 @@ public class CountryCodePicker extends RelativeLayout {
         if (attrs != null && xmlWidth != null && (xmlWidth.equals(LayoutParams.MATCH_PARENT + "") || xmlWidth.equals(LayoutParams.FILL_PARENT + "") || xmlWidth.equals("fill_parent") || xmlWidth.equals("match_parent"))) {
             holderView = mInflater.inflate(R.layout.layout_full_width_code_picker, this, true);
         } else {
-            holderView = mInflater.inflate(R.layout.layout_code_picker, this, true);
+            holderView = mInflater.inflate(R.layout.layout_code_picker2, this, true);
         }
 
         textView_selectedCountry = (TextView) holderView.findViewById(R.id.textView_selectedCountry);
-        holder = (RelativeLayout) holderView.findViewById(R.id.countryCodeHolder);
+        holder = (MaterialCardView) holderView.findViewById(R.id.countryCodeHolder);
         imageViewArrow = (ImageView) holderView.findViewById(R.id.imageView_arrow);
         imageViewFlag = (ImageView) holderView.findViewById(R.id.image_flag);
         linearFlagHolder = (LinearLayout) holderView.findViewById(R.id.linear_flag_holder);
@@ -1116,11 +1118,11 @@ public class CountryCodePicker extends RelativeLayout {
         this.holderView = holderView;
     }
 
-    public RelativeLayout getHolder() {
+    public MaterialCardView getHolder() {
         return holder;
     }
 
-    private void setHolder(RelativeLayout holder) {
+    private void setHolder(MaterialCardView holder) {
         this.holder = holder;
     }
 
